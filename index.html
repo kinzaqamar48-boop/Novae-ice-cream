@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NOVAE — Luxury Ice Cream</title>
+
+    <meta name="description"
+        content="NOVAE — A luxury ice cream experience crafted with premium ingredients and unforgettable flavours.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            NOVAE
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="index.html" class="active">Home</a>
+
+            <a href="#flavours">Flavours</a>
+
+            <a href="#about">About</a>
+
+            <a href="#contact">Contact</a>
+
+            <a href="cart.html" class="cart-link">
+                Cart
+                <span id="cart-count">0</span>
+            </a>
+
+        </nav>
+
+        <a href="checkout.html" class="nav-order-btn">
+            Order Now
+        </a>
+
+    </header>
+
+
+    <!-- =====================================================
+         HERO SECTION
+    ====================================================== -->
+
+    <main>
+
+        <section class="hero">
+
+            <!-- Cinematic Background Video -->
+
+            <video class="hero-video" autoplay muted loop playsinline>
+
+                <source src="videos/ice-cream.mp4" type="video/mp4">
+
+                Your browser does not support the video tag.
+
+            </video>
+
+
+            <!-- Dark Overlay -->
+
+            <div class="hero-overlay"></div>
+
+
+            <!-- Hero Content -->
+
+            <div class="hero-content">
+
+                <p class="hero-small-text">
+                    THE ART OF INDULGENCE
+                </p>
+
+                <h1>
+                    Taste the
+                    <span>Extraordinary.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Handcrafted luxury ice cream,
+                    created for moments worth remembering.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#flavours" class="primary-btn">
+                        Explore Flavours
+                    </a>
+
+                    <a href="checkout.html" class="secondary-btn">
+                        Order Now
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Scroll Indicator -->
+
+            <div class="scroll-indicator">
+                <span>Scroll to discover</span>
+                <div class="scroll-line"></div>
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             INTRO SECTION
+        ====================================================== -->
+
+        <section class="intro-section">
+
+            <div class="intro-content">
+
+                <p class="section-label">
+                    WELCOME TO NOVAE
+                </p>
+
+                <h2>
+                    Where every scoop
+                    becomes a <em>memory.</em>
+                </h2>
+
+                <p>
+                    NOVAE is more than ice cream.
+                    It is a carefully crafted experience where
+                    premium ingredients, elegant flavours and
+                    timeless indulgence come together.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================================
+     FLAVOURS SECTION
+====================================================== -->
+
+<section class="flavours-section" id="flavours">
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            OUR COLLECTION
+        </p>
+
+        <h2>
+            Discover Your
+            <em>Favourite.</em>
+        </h2>
+
+        <p>
+            Eight carefully crafted flavours.
+            One unforgettable experience.
+        </p>
+
+    </div>
+
+
+    <div class="flavours-grid">
+
+
+        <!-- 01 — CARAMEL -->
+
+        <article class="flavour-card">
+
+            <div class="flavour-image">
+
+                <img
+                    src="images/caramel.jpg"
+                    alt="NOVAE Caramel Ice Cream">
+
+                <span class="flavour-number">
+                    01
+                </span>
+
+            </div>
+
+            <div class="flavour-info">
+
+                <h3>Caramel</h3>
+
+                <p>
+                    Silky caramel ice cream with a rich,
+                    smooth and indulgent finish.
+                </p>
+
+                <div class="flavour-bottom">
+
+                    <span>Rs. 450</span>
+
+                    <button
+                        class="add-to-cart"
+                        data-name="Caramel"
+                        data-price="450">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- 02 — CHOCOLATE -->
+
+        <article class="flavour-card">
+
+            <div class="flavour-image">
+
+                <img
+                    src="images/chocolate.jpg"
+                    alt="NOVAE Chocolate Ice Cream">
+
+                <span class="flavour-number">
+                    02
+                </span>
+
+            </div>
+
+            <div class="flavour-info">
+
+                <h3>Chocolate</h3>
+
+                <p>
+                    Deep, velvety chocolate crafted for
+                    the ultimate indulgent experience.
+                </p>
+
+                <div class="flavour-bottom">
+
+                    <span>Rs. 500</span>
+
+                    <button
+                        class="add-to-cart"
+                        data-name="Chocolate"
+                        data-price="500">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- 03 — COFFEE -->
+
+        <article class="flavour-card">
+
+            <div class="flavour-image">
+
+                <img
+                    src="images/coffee.jpg"
+                    alt="NOVAE Coffee Ice Cream">
+
+                <span class="flavour-number">
+                    03
+                </span>
+
+            </div>
+
+            <div class="flavour-info">
+
+                <h3>Coffee</h3>
+
+                <p>
+                    Bold roasted coffee blended into a
+                    perfectly creamy indulgence.
+                </p>
+
+                <div class="flavour-bottom">
+
+                    <span>Rs. 480</span>
+
+                    <button
+                        class="add-to-cart"
+                        data-name="Coffee"
+                        data-price="480">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- 04 — MANGO -->
+
+        <article class="flavour-card">
+
+            <div class="flavour-image">
+
+                <img
+                    src="images/mango.jpg"
+                    alt="NOVAE Mango Ice Cream">
+
+                <span class="flavour-number">
+                    04
+                </span>
+
+            </div>
+
+            <div class="flavour-info">
+
+                <h3>Mango</h3>
+
+                <p>
+                    Creamy tropical mango with a naturally
+                    sweet and refreshing taste.
+                </p>
+
+                <div class="flavour-bottom">
+
+                    <span>Rs. 490</span>
+
+                    <button
+                        class="add-to-cart"
+                        data-name="Mango"
+                        data-price="490">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- 05 — COOKIES -->
+
+        <article class="flavour-card">
+
+            <div class="flavour-image">
+
+                <img
+                    src="images/cookies.jpg"
+                    alt="NOVAE Cookies Ice Cream">
+
+                <span class="flavour-number">
+                    05
+                </span>
+
+            </div>
+
+            <div class="flavour-info">
+
+                <h3>Cookies</h3>
+
+                <p>
+                    Creamy ice cream with delicious cookie
+                    pieces in every bite.
+                </p>
+
+                <div class="flavour-bottom">
+
+                    <span>Rs. 470</span>
+
+                    <button
+                        class="add-to-cart"
+                        data-name="Cookies"
+                        data-price="470">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- 06 — PISTACHIO -->
+
+        <article class="flavour-card">
+
+            <div class="flavour-image">
+
+                <img
+                    src="images/pistachio.jpg"
+                    alt="NOVAE Pistachio Ice Cream">
+
+                <span class="flavour-number">
+                    06
+                </span>
+
+            </div>
+
+            <div class="flavour-info">
+
+                <h3>Pistachio</h3>
+
+                <p>
+                    Smooth pistachio cream with a delicate
+                    nutty flavour and luxurious finish.
+                </p>
+
+                <div class="flavour-bottom">
+
+                    <span>Rs. 520</span>
+
+                    <button
+                        class="add-to-cart"
+                        data-name="Pistachio"
+                        data-price="520">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- 07 — STRAWBERRY -->
+
+        <article class="flavour-card">
+
+            <div class="flavour-image">
+
+                <img
+                    src="images/strawberry.jpg"
+                    alt="NOVAE Strawberry Ice Cream">
+
+                <span class="flavour-number">
+                    07
+                </span>
+
+            </div>
+
+            <div class="flavour-info">
+
+                <h3>Strawberry</h3>
+
+                <p>
+                    Fresh strawberry sweetness blended
+                    into a silky, creamy delight.
+                </p>
+
+                <div class="flavour-bottom">
+
+                    <span>Rs. 470</span>
+
+                    <button
+                        class="add-to-cart"
+                        data-name="Strawberry"
+                        data-price="470">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- 08 — VANILLA -->
+
+        <article class="flavour-card">
+
+            <div class="flavour-image">
+
+                <img
+                    src="images/vanilla.jpg"
+                    alt="NOVAE Vanilla Ice Cream">
+
+                <span class="flavour-number">
+                    08
+                </span>
+
+            </div>
+
+            <div class="flavour-info">
+
+                <h3>Vanilla</h3>
+
+                <p>
+                    Classic vanilla with an elegant,
+                    creamy and timeless taste.
+                </p>
+
+                <div class="flavour-bottom">
+
+                    <span>Rs. 450</span>
+
+                    <button
+                        class="add-to-cart"
+                        data-name="Vanilla"
+                        data-price="450">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+       
+
+
+        <!-- =====================================================
+             ABOUT SECTION
+        ====================================================== -->
+
+        <section class="about-section" id="about">
+
+            <div class="about-image">
+
+                <img
+                    src="images/novae ice cream.jpg"
+                    alt="Luxury NOVAE ice cream">
+
+            </div>
+
+            <div class="about-content">
+
+                <p class="section-label">
+                    THE NOVAE EXPERIENCE
+                </p>
+
+                <h2>
+                    Crafted slowly.
+                    <em>Enjoyed completely.</em>
+                </h2>
+
+                <p>
+                    Every NOVAE creation begins with carefully
+                    selected ingredients and a passion for
+                    exceptional flavour.
+                </p>
+
+                <p>
+                    From the first spoonful to the last,
+                    every detail is designed to make your
+                    experience unforgettable.
+                </p>
+
+                <a href="#flavours" class="text-btn">
+                    Explore Collection →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA SECTION
+        ====================================================== -->
+
+        <section class="cta-section" id="contact">
+
+            <div class="cta-content">
+
+                <p class="section-label">
+                    YOUR NEXT INDULGENCE
+                </p>
+
+                <h2>
+                    Which flavour
+                    will you choose?
+                </h2>
+
+                <p>
+                    Discover the NOVAE collection
+                    and order your favourite today.
+                </p>
+
+                <a href="checkout.html" class="primary-btn">
+                    Order Now
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+
+            <h2>
+                NOVAE
+            </h2>
+
+            <p>
+                Luxury, one scoop at a time.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="#flavours">
+                Flavours
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+            <a href="cart.html">
+                Cart
+            </a>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 NOVAE. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

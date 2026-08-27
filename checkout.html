@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NOVAE — Checkout</title>
+
+    <meta name="description"
+        content="Complete your NOVAE luxury ice cream order.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            NOVAE
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#flavours">
+                Flavours
+            </a>
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+            <a href="cart.html" class="cart-link">
+
+                Cart
+
+                <span id="cart-count">
+                    0
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <a href="cart.html" class="nav-order-btn">
+            Cart
+        </a>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CHECKOUT PAGE
+    ====================================================== -->
+
+    <main class="checkout-page">
+
+
+        <!-- HEADER -->
+
+        <section class="checkout-header">
+
+            <p class="section-label">
+                NOVAE COLLECTION
+            </p>
+
+
+            <h1>
+
+                Complete Your
+                <em>Order.</em>
+
+            </h1>
+
+
+            <p>
+
+                Just a few details and your NOVAE
+                indulgence will be on its way.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CHECKOUT CONTENT
+        ================================================== -->
+
+        <section
+            class="checkout-section"
+            id="checkout-content">
+
+
+            <!-- =============================================
+                 CUSTOMER DETAILS
+            ============================================== -->
+
+            <div class="checkout-form-box">
+
+                <h2>
+                    Delivery Details
+                </h2>
+
+
+                <form id="checkout-form">
+
+
+                    <!-- NAME -->
+
+                    <div class="form-group">
+
+                        <label for="customer-name">
+                            Full Name
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="customer-name"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- PHONE -->
+
+                    <div class="form-group">
+
+                        <label for="customer-phone">
+                            Mobile Number
+                        </label>
+
+
+                        <input
+                            type="tel"
+                            id="customer-phone"
+                            placeholder="03XX XXXXXXX"
+                            pattern="[0-9+\-\s]{10,15}"
+                            required>
+
+                    </div>
+
+
+
+                    <!-- ADDRESS -->
+
+                    <div class="form-group">
+
+                        <label for="customer-address">
+                            Complete Address
+                        </label>
+
+
+                        <textarea
+                            id="customer-address"
+                            rows="5"
+                            placeholder="House / Flat, Street, Area, City"
+                            required></textarea>
+
+                    </div>
+
+
+
+                    <!-- PAYMENT -->
+
+                    <div class="payment-box">
+
+                        <p class="payment-label">
+                            Payment Method
+                        </p>
+
+
+                        <label class="cod-option">
+
+                            <input
+                                type="radio"
+                                name="payment"
+                                value="Cash on Delivery"
+                                checked>
+
+                            <span>
+                                Cash on Delivery
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <!-- PLACE ORDER -->
+
+                    <button
+                        type="submit"
+                        class="place-order-btn">
+
+                        Place Order
+
+                    </button>
+
+
+                </form>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 ORDER SUMMARY
+            ============================================== -->
+
+            <div class="checkout-summary">
+
+                <h2>
+                    Your Order
+                </h2>
+
+
+                <div id="checkout-items">
+
+                    <!-- Products will appear here -->
+
+                </div>
+
+
+
+                <!-- SUBTOTAL -->
+
+                <div class="checkout-summary-line">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+
+                    <span id="checkout-subtotal">
+                        Rs. 0
+                    </span>
+
+                </div>
+
+
+
+                <!-- DELIVERY -->
+
+                <div class="checkout-summary-line">
+
+                    <span>
+                        Delivery
+                    </span>
+
+
+                    <span>
+                        Rs. 150
+                    </span>
+
+                </div>
+
+
+
+                <!-- TOTAL -->
+
+                <div class="checkout-total">
+
+                    <span>
+                        Total
+                    </span>
+
+
+                    <span id="checkout-total">
+                        Rs. 0
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             EMPTY CART MESSAGE
+        ================================================== -->
+
+        <section
+            id="checkout-empty"
+            class="checkout-empty">
+
+            <div class="empty-checkout-icon">
+                🛒
+            </div>
+
+
+            <h2>
+                Your Cart is Empty.
+            </h2>
+
+
+            <p>
+                Please select a flavour before
+                proceeding to checkout.
+            </p>
+
+
+            <a
+                href="index.html#flavours"
+                class="primary-btn">
+
+                Explore Flavours
+
+            </a>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ORDER SUCCESS
+        ================================================== -->
+
+        <section
+            id="order-success"
+            class="order-success">
+
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <p class="section-label">
+                ORDER CONFIRMED
+            </p>
+
+
+            <h2>
+
+                Thank You,
+                <span id="success-name">
+                    Guest
+                </span>.
+
+            </h2>
+
+
+            <p>
+
+                Your NOVAE order has been received
+                successfully. We will contact you
+                shortly to confirm your delivery.
+
+            </p>
+
+
+
+            <!-- ORDER NUMBER -->
+
+            <div class="order-number-box">
+
+                <span>
+                    ORDER NUMBER
+                </span>
+
+
+                <strong id="order-number">
+                    NOVAE-000000
+                </strong>
+
+            </div>
+
+
+
+            <!-- TOTAL -->
+
+            <div class="success-total">
+
+                <span>
+                    Order Total
+                </span>
+
+
+                <strong id="success-total">
+                    Rs. 0
+                </strong>
+
+            </div>
+
+
+
+            <a
+                href="index.html"
+                class="primary-btn">
+
+                Continue Shopping
+
+            </a>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+
+        <div class="footer-brand">
+
+            <h2>
+                NOVAE
+            </h2>
+
+
+            <p>
+                Luxury, one scoop at a time.
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#flavours">
+                Flavours
+            </a>
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="cart.html">
+                Cart
+            </a>
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 NOVAE. All Rights Reserved.
+            </p>
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         CHECKOUT JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* =================================================
+           LOAD CART
+        ================================================= */
+
+        let cart =
+            JSON.parse(
+                localStorage.getItem("novaeCart")
+            ) || [];
+
+
+
+        /* =================================================
+           ELEMENTS
+        ================================================= */
+
+        const checkoutContent =
+            document.getElementById(
+                "checkout-content"
+            );
+
+
+        const checkoutEmpty =
+            document.getElementById(
+                "checkout-empty"
+            );
+
+
+        const checkoutItems =
+            document.getElementById(
+                "checkout-items"
+            );
+
+
+        const checkoutSubtotal =
+            document.getElementById(
+                "checkout-subtotal"
+            );
+
+
+        const checkoutTotal =
+            document.getElementById(
+                "checkout-total"
+            );
+
+
+        const cartCount =
+            document.getElementById(
+                "cart-count"
+            );
+
+
+        const checkoutForm =
+            document.getElementById(
+                "checkout-form"
+            );
+
+
+        const orderSuccess =
+            document.getElementById(
+                "order-success"
+            );
+
+
+        const successName =
+            document.getElementById(
+                "success-name"
+            );
+
+
+        const orderNumber =
+            document.getElementById(
+                "order-number"
+            );
+
+
+        const successTotal =
+            document.getElementById(
+                "success-total"
+            );
+
+
+
+        /* =================================================
+           UPDATE CART COUNT
+        ================================================= */
+
+        function updateCartCount() {
+
+            let totalQuantity = 0;
+
+
+            cart.forEach(function (item) {
+
+                totalQuantity +=
+                    Number(item.quantity);
+
+            });
+
+
+            cartCount.textContent =
+                totalQuantity;
+
+        }
+
+
+
+        /* =================================================
+           DISPLAY CHECKOUT
+        ================================================= */
+
+        function displayCheckout() {
+
+
+            /* EMPTY CART */
+
+            if (cart.length === 0) {
+
+                checkoutContent.style.display =
+                    "none";
+
+                checkoutEmpty.style.display =
+                    "block";
+
+                updateCartCount();
+
+                return;
+
+            }
+
+
+            /* SHOW CHECKOUT */
+
+            checkoutContent.style.display =
+                "grid";
+
+            checkoutEmpty.style.display =
+                "none";
+
+
+            checkoutItems.innerHTML =
+                "";
+
+
+            let subtotal = 0;
+
+
+
+            /* PRODUCTS */
+
+            cart.forEach(function (item) {
+
+                const itemTotal =
+                    Number(item.price) *
+                    Number(item.quantity);
+
+
+                subtotal += itemTotal;
+
+
+                const itemElement =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                itemElement.className =
+                    "checkout-item";
+
+
+                itemElement.innerHTML = `
+
+                    <div>
+
+                        <h3>
+                            ${item.name}
+                        </h3>
+
+                        <p>
+                            ${item.quantity}
+                            × Rs. ${item.price}
+                        </p>
+
+                    </div>
+
+
+                    <strong>
+                        Rs. ${itemTotal}
+                    </strong>
+
+                `;
+
+
+                checkoutItems.appendChild(
+                    itemElement
+                );
+
+            });
+
+
+
+            /* SUBTOTAL */
+
+            checkoutSubtotal.textContent =
+                `Rs. ${subtotal}`;
+
+
+
+            /* DELIVERY */
+
+            const delivery = 150;
+
+
+
+            /* TOTAL */
+
+            const finalTotal =
+                subtotal + delivery;
+
+
+            checkoutTotal.textContent =
+                `Rs. ${finalTotal}`;
+
+
+
+            /* COUNT */
+
+            updateCartCount();
+
+        }
+
+
+
+        /* =================================================
+           PLACE ORDER
+        ================================================= */
+
+        checkoutForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                /* CHECK CART */
+
+                if (cart.length === 0) {
+
+                    alert(
+                        "Your cart is empty. Please select a flavour first."
+                    );
+
+                    window.location.href =
+                        "index.html#flavours";
+
+                    return;
+
+                }
+
+
+
+                /* CUSTOMER DETAILS */
+
+                const customerName =
+                    document.getElementById(
+                        "customer-name"
+                    ).value.trim();
+
+
+                const customerPhone =
+                    document.getElementById(
+                        "customer-phone"
+                    ).value.trim();
+
+
+                const customerAddress =
+                    document.getElementById(
+                        "customer-address"
+                    ).value.trim();
+
+
+
+                /* VALIDATION */
+
+                if (
+                    customerName === "" ||
+                    customerPhone === "" ||
+                    customerAddress === ""
+                ) {
+
+                    alert(
+                        "Please complete all delivery details."
+                    );
+
+                    return;
+
+                }
+
+
+
+                /* CALCULATE TOTAL */
+
+                let subtotal = 0;
+
+
+                cart.forEach(function (item) {
+
+                    subtotal +=
+                        Number(item.price) *
+                        Number(item.quantity);
+
+                });
+
+
+                const delivery = 150;
+
+                const finalTotal =
+                    subtotal + delivery;
+
+
+
+                /* GENERATE ORDER NUMBER */
+
+                const generatedOrderNumber =
+                    "NOVAE-" +
+                    Math.floor(
+                        100000 +
+                        Math.random() * 900000
+                    );
+
+
+
+                /* ORDER OBJECT */
+
+                const order = {
+
+                    orderNumber:
+                        generatedOrderNumber,
+
+                    customerName:
+                        customerName,
+
+                    customerPhone:
+                        customerPhone,
+
+                    customerAddress:
+                        customerAddress,
+
+                    paymentMethod:
+                        "Cash on Delivery",
+
+                    items:
+                        cart,
+
+                    subtotal:
+                        subtotal,
+
+                    delivery:
+                        delivery,
+
+                    total:
+                        finalTotal,
+
+                    date:
+                        new Date().toLocaleString()
+
+                };
+
+
+
+                /* SAVE ORDER */
+
+                localStorage.setItem(
+                    "novaeLastOrder",
+                    JSON.stringify(order)
+                );
+
+
+
+                /* SHOW SUCCESS */
+
+                successName.textContent =
+                    customerName;
+
+
+                orderNumber.textContent =
+                    generatedOrderNumber;
+
+
+                successTotal.textContent =
+                    `Rs. ${finalTotal}`;
+
+
+
+                checkoutContent.style.display =
+                    "none";
+
+
+                checkoutEmpty.style.display =
+                    "none";
+
+
+                orderSuccess.style.display =
+                    "block";
+
+
+
+                /* CLEAR CART */
+
+                localStorage.removeItem(
+                    "novaeCart"
+                );
+
+
+                cart = [];
+
+                updateCartCount();
+
+
+
+                /* SCROLL */
+
+                window.scrollTo({
+
+                    top: 0,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
+
+
+
+        /* =================================================
+           START
+        ================================================= */
+
+        displayCheckout();
+
+    </script>
+
+
+</body>
+
+</html>

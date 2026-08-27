@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NOVAE — Your Cart</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            NOVAE
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#flavours">
+                Flavours
+            </a>
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+            <a href="cart.html" class="active cart-link">
+                Cart
+                <span id="cart-count">0</span>
+            </a>
+
+        </nav>
+
+        <a href="cart.html" class="nav-order-btn">
+            Order Now
+        </a>
+
+    </header>
+
+
+    <!-- CART PAGE -->
+
+    <main class="cart-page">
+
+        <section class="cart-header">
+
+            <p class="section-label">
+                NOVAE COLLECTION
+            </p>
+
+            <h1>
+                Your <em>Cart.</em>
+            </h1>
+
+            <p>
+                Your carefully selected flavours.
+            </p>
+
+        </section>
+
+
+        <section class="cart-section">
+
+            <!-- CART ITEMS -->
+
+            <div id="cart-items"></div>
+
+
+            <!-- EMPTY CART -->
+
+            <div id="empty-cart" class="empty-cart">
+
+                <h2>
+                    Your cart is empty.
+                </h2>
+
+                <p>
+                    Discover our flavours and choose
+                    your favourite.
+                </p>
+
+                <a href="index.html#flavours" class="primary-btn">
+                    Explore Flavours
+                </a>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div id="cart-summary" class="cart-summary">
+
+                <div class="summary-row">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <span id="cart-subtotal">
+                        Rs. 0
+                    </span>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Delivery
+                    </span>
+
+                    <span>
+                        Rs. 150
+                    </span>
+
+                </div>
+
+
+                <div class="summary-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <span id="cart-total">
+                        Rs. 0
+                    </span>
+
+                </div>
+
+
+                <a href="checkout.html" class="checkout-btn">
+                    Proceed to Checkout
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+
+            <h2>
+                NOVAE
+            </h2>
+
+            <p>
+                Luxury, one scoop at a time.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#flavours">
+                Flavours
+            </a>
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="cart.html">
+                Cart
+            </a>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 NOVAE. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- CART JAVASCRIPT -->
+
+    <script>
+
+        let cart =
+            JSON.parse(localStorage.getItem("novaeCart")) || [];
+
+
+        const cartItems =
+            document.getElementById("cart-items");
+
+        const emptyCart =
+            document.getElementById("empty-cart");
+
+        const cartSummary =
+            document.getElementById("cart-summary");
+
+        const cartSubtotal =
+            document.getElementById("cart-subtotal");
+
+        const cartTotal =
+            document.getElementById("cart-total");
+
+        const cartCount =
+            document.getElementById("cart-count");
+
+
+        /* DISPLAY CART */
+
+        function displayCart() {
+
+            cartItems.innerHTML = "";
+
+
+            if (cart.length === 0) {
+
+                emptyCart.style.display = "block";
+
+                cartSummary.style.display = "none";
+
+                cartCount.textContent = "0";
+
+                return;
+            }
+
+
+            emptyCart.style.display = "none";
+
+            cartSummary.style.display = "block";
+
+
+            let subtotal = 0;
+
+            let totalQuantity = 0;
+
+
+            cart.forEach((item, index) => {
+
+                subtotal +=
+                    Number(item.price) * Number(item.quantity);
+
+                totalQuantity +=
+                    Number(item.quantity);
+
+
+                const itemElement =
+                    document.createElement("div");
+
+
+                itemElement.className =
+                    "cart-item";
+
+
+                itemElement.innerHTML = `
+
+                    <div class="cart-item-info">
+
+                        <div class="cart-item-number">
+                            ${String(index + 1).padStart(2, "0")}
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                ${item.name}
+                            </h3>
+
+                            <p>
+                                Rs. ${item.price} per scoop
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quantity-control">
+
+                        <button
+                            type="button"
+                            onclick="decreaseQuantity(${index})">
+                            −
+                        </button>
+
+                        <span>
+                            ${item.quantity}
+                        </span>
+
+                        <button
+                            type="button"
+                            onclick="increaseQuantity(${index})">
+                            +
+                        </button>
+
+                    </div>
+
+
+                    <div class="cart-item-price">
+                        Rs. ${Number(item.price) * Number(item.quantity)}
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="remove-item"
+                        onclick="removeItem(${index})">
+
+                        Remove
+
+                    </button>
+
+                `;
+
+
+                cartItems.appendChild(itemElement);
+
+            });
+
+
+            cartCount.textContent =
+                totalQuantity;
+
+
+            cartSubtotal.textContent =
+                `Rs. ${subtotal}`;
+
+
+            const delivery = 150;
+
+
+            cartTotal.textContent =
+                `Rs. ${subtotal + delivery}`;
+
+        }
+
+
+        /* INCREASE */
+
+        function increaseQuantity(index) {
+
+            cart[index].quantity++;
+
+            saveCart();
+
+            displayCart();
+
+        }
+
+
+        /* DECREASE */
+
+        function decreaseQuantity(index) {
+
+            if (cart[index].quantity > 1) {
+
+                cart[index].quantity--;
+
+            } else {
+
+                cart.splice(index, 1);
+
+            }
+
+            saveCart();
+
+            displayCart();
+
+        }
+
+
+        /* REMOVE */
+
+        function removeItem(index) {
+
+            cart.splice(index, 1);
+
+            saveCart();
+
+            displayCart();
+
+        }
+
+
+        /* SAVE */
+
+        function saveCart() {
+
+            localStorage.setItem(
+                "novaeCart",
+                JSON.stringify(cart)
+            );
+
+        }
+
+
+        /* START */
+
+        displayCart();
+
+    </script>
+
+</body>
+
+</html>
